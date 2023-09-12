@@ -1,0 +1,69 @@
+[System]
+Name='fuzzy_diag'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=25
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Edad'
+Range=[0 100]
+NumMFs=5
+MF1='K':'trimf',[0 6 12]
+MF2='T':'trimf',[10 15 20]
+MF3='YA':'trimf',[18 26 35]
+MF4='Ad':'trimf',[30 45 65]
+MF5='E':'trimf',[60 80 105]
+
+[Input2]
+Name='Textura'
+Range=[0 1]
+NumMFs=5
+MF1='T1':'trimf',[0 0.2 0.4]
+MF2='T2':'trimf',[0.2 0.4 0.6]
+MF3='T3':'trimf',[0.4 0.6 0.8]
+MF4='T4':'trimf',[0.7 0.8 0.9]
+MF5='T5':'trimf',[0.8 0.9 1]
+
+[Output1]
+Name='Diagnostico'
+Range=[0 100]
+NumMFs=5
+MF1='Tipo_0':'trimf',[-5 10 25]
+MF2='Tipo_1':'trimf',[20 25 35]
+MF3='Tipo_2':'trimf',[30 35 45]
+MF4='Tipo_3':'trimf',[40 50 65]
+MF5='Tipo_4':'trimf',[60 80 105]
+
+[Rules]
+1 5, 1 (1) : 1
+1 4, 1 (1) : 1
+1 3, 2 (1) : 1
+1 2, 3 (1) : 1
+1 1, 4 (1) : 1
+2 5, 1 (1) : 1
+2 4, 2 (1) : 1
+2 3, 3 (1) : 1
+2 2, 4 (1) : 1
+2 1, 5 (1) : 1
+3 5, 1 (1) : 1
+3 4, 2 (1) : 1
+3 3, 3 (1) : 1
+3 2, 4 (1) : 1
+3 1, 5 (1) : 1
+4 5, 2 (1) : 1
+4 4, 2 (1) : 1
+4 3, 3 (1) : 1
+4 2, 4 (1) : 1
+4 1, 5 (1) : 1
+5 5, 2 (1) : 1
+5 4, 2 (1) : 1
+5 3, 3 (1) : 1
+5 2, 4 (1) : 1
+5 1, 5 (1) : 1
